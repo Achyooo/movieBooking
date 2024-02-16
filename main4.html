@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예약하기</title>
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        #topContainer{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 1px 2px 2px rgba(0,0,0,0.2);
+            background-color: white;
+        }
+
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        #logo{
+            margin: 5px 30px;
+        }
+
+        h1>a{
+            text-decoration: none;
+            color: #444;
+        }
+
+        li>a{
+            text-decoration: none;
+            padding: 10px 35px;
+            margin: 10px 40px;
+            border-radius: 20px;
+            color: #444;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        li>a:hover{
+            background-color: #444;
+            color: white;
+        }
+
+        ul>li{
+            list-style: none;
+        }
+
+        img{
+            width: 60px;
+            height: 60px;
+            margin: 5px 30px;
+        }
+
+        /* 여기까지 */
+        /* 헤더예요 */
+
+
+        #container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 660px;
+            margin: 70px auto;
+            background-color: #ddd;
+            border-radius: 30px;
+            padding-bottom: 20px;
+        }
+
+
+        /* 영화 선택 목록 */
+        .movieContainer{
+            margin-top: 50px;
+            margin-bottom: 50px;
+            color: #444;
+            font-size: 1.4rem;
+        }
+
+        #movie{
+            border: none;
+            border-radius: 10px;
+            padding: 5px 15px 5px 15px;
+            appearance: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        /* 자리 색깔 정보 */
+        .colorContainer{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(0,0,0,0.15);
+            border-radius: 10px;
+            padding: 10px 20px 10px 20px;
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+        .seatPic1{
+            margin: 5px;
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+        }
+
+        .seatPic2{
+            margin: 5px;
+            width: 30px;
+            height: 30px;
+            background-color: #444;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            margin-left: 30px;
+        }
+
+
+        /* 스크린 */
+        .screen{
+            width: 440px;
+            height: 0px;
+            margin-bottom: 50px;
+            border-top: 150px solid white; 
+            border-left: 50px solid transparent; 
+            border-right: 50px solid transparent; 
+            transform: rotateX(-50deg);
+        }
+
+
+        /* 자리 */
+        .seatContainer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .occupied{
+            display: inline-block;
+            margin: 3px;
+            width: 30px;
+            height: 30px;
+            background-color: #444;
+            cursor: pointer;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+        }
+        .seat{
+            display: inline-block;
+            margin: 3px;
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            cursor: pointer;
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+        }
+        .seat:nth-child(3){
+            margin-left: 30px;
+        }
+        .seat:nth-child(7){
+            margin-left: 30px;
+        }
+        .occupied:nth-child(3){
+            margin-left: 30px;
+        }
+        .occupied:nth-child(7){
+            margin-left: 30px;
+        }
+
+
+        /* 하단 메시지 */
+        .msgContainer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #444;
+            font-size: 1.4rem;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+        p>span{
+            color: red;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header id="topPlace">
+        <div id="topContainer">
+
+            <div id="logo">
+                <h1><a href="#" style="font-size:1.9rem"><span style="font-size:2.9rem; color:red">N</span>ameMohazi</a></h1>
+            </div>
+
+            <nav class="navi">
+                <ul>
+                    <li><a href="main1.html#itrdUsing">이용 안내</a></li>
+                    <li><a href="main1.html#itrdMovie">영화 소개</a></li>
+                    <li><a href="main1.html#itrdBooking">예약 방법 및 요금</a></li>
+                    <li><a href="main4.html">예약하기</a></li>
+                </ul>
+            </nav>
+
+            <div id="login">
+                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/5087/5087592.png" alt="이건 이미지"></a>
+            </div>
+
+        </div>
+    </header>
+
+    <div id="container">
+
+        <!-- 영화 선택 목록 -->
+        <div class="movieContainer">
+            <label for="movie">Pick a Movie : </label>
+            <select name="pickMovie" id="movie">
+                <option class="price" value="10">던전 앤 드래곤: 도적들의 명예 ($10)</option>
+                <option class="price" value="9">해리포터와 마법사의 돌 ($9)</option>
+                <option class="price" value="8">반지의 제왕: 왕의 귀환 ($8)</option>
+            </select>
+        </div>
+
+        <!-- 자리 색깔 정보 -->
+        <div class="colorContainer">
+            <span class="seatPic1"></span>
+            <span class="seatInformation">Available Seat</span>
+            <span class="seatPic2"></span>
+            <span class="seatInformation">Occupied Seat</span>
+        </div>
+
+
+        <!-- 스크린과 자리 -->
+        <div class="seatContainer">
+            <div class="screen"></div>
+            <!-- ↑↑↑ 이거 영화관스크린 -->
+            <div class="seatWrap"></div>
+        </div>
+
+
+        <!-- 하단 메시지 -->
+        <div class="msgContainer">
+            <p class="bookListMsg">You have selected <span class="count">0</span> seats for a price of <span style="color: red">$</span> <span class="cost">0</span></p>
+        </div>
+
+    </div>
+
+    <script>
+
+        let row = 6;
+        let col = 8;
+        let seatNumList = [];
+
+        let seatWrap = document.querySelector(".seatWrap");
+
+
+        // 부킹 함수 만들러 왓음
+        let booking = (event, i, j) => {
+            if(event.target.classList.contains("seat")){
+                // 만약 그 event.target 속에 seat 클래스가 있다면
+                event.target.classList.replace("seat", "occupied");
+                // event.target의 seat 클래스를 occupied로 바꿀거임
+                seatNumList.push(i*8+j+1);
+                // 그 번호 리스트에 집어넣어
+
+            }else{
+                // 그 외의 모든 상황이라면(아무튼 아니면)(아무튼눌러서예약되어있는상황)
+                event.target.classList.replace("occupied", "seat");
+                // 바꿔.
+                let index = seatNumList.indexOf(i*8+j+1);
+                // 이건 그 인덱스 번호를 알려주는 함수
+                // 그렇게 알게된 번호를 잘라내야함
+                seatNumList.splice(index, 1);
+                // 자른걸 리턴해준...다.
+                // seatNumList = 예약번호저장해두는곳임 제발 기억을합시다
+            };
+            let count = document.querySelector(".count");
+            count.innerHTML = seatNumList.length;
+            let cost = document.querySelector(".cost")
+            let movie = document.querySelector("#movie");
+            cost.innerHTML = seatNumList.length * movie.value;
+        };
+
+
+        for(let i=0; i<row; i++){
+            let div = document.createElement("div");
+            // 일단 div 태그 만들었어
+            div.classList.add("row");
+            // 클래스 이름도 추가해줬음
+            // <div class="row">
+
+            for(let j=0; j<col; j++){
+                let span = document.createElement("span");
+                // span 태그 만들어줬어
+                span.classList.add("seat");
+                // 클래스 이름 추가해줬음22
+                // <span class="seat">
+                div.appendChild(span);
+                // div 안에 span 태그 넣어줬음
+
+                span.addEventListener("click", (event) => booking(event, i, j));
+                // 이벤트... 걸어주기... span 하나하나에 이벤트 걸어야할거아녀
+                // 그래서 그 부킹 이벤트는 i값과 j값을 받아서 이루어지는거고. 이 함수 만들러 위로 감
+            };
+
+            seatWrap.appendChild(div); // 저어어어 위에서 가져왔던 seatWrap 변수에 이렇게 나온 div들 쫚 넣어줌
+        };
+        // 이렇게 자바스크립트로 틀은 완성
+
+
+
+        let movie = document.querySelector("#movie");
+        // 무비 셀렉트 아이디 가져오고
+        let bookListMsg = document.querySelector(".bookListMsg");
+
+        let changeCost = (event) => {
+            let movieCost = event.target.value;
+            let count = document.querySelector(".count");
+            count.innerHTML = seatNumList.length; 
+            let cost = document.querySelector(".cost")
+            cost.innerHTML = seatNumList.length * movie.value;
+
+        }
+
+        movie.addEventListener("change", changeCost);
+        // 체인지코스트 함수 만들러 위로
+
+
+    </script>
+
+</body>
+
+</html>

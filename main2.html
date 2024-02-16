@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ho">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>안내 페이지</title>
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        #topContainer{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 1px 2px 2px rgba(0,0,0,0.2);
+            background-color: white;
+        }
+
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        #logo{
+            margin: 5px 30px;
+        }
+
+        h1>a{
+            text-decoration: none;
+            color: #444;
+        }
+
+        li>a{
+            text-decoration: none;
+            padding: 10px 35px;
+            margin: 10px 40px;
+            border-radius: 20px;
+            color: #444;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        li>a:hover{
+            background-color: #444;
+            color: white;
+        }
+
+        ul>li{
+            list-style: none;
+        }
+
+        #login>a>img{
+            width: 60px;
+            height: 60px;
+            margin: 5px 30px;
+        }
+
+        /* 여기까지 */
+        /* 헤더예요 */
+
+
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        h3{
+            padding-bottom: 38px;
+            font-size: 1.6rem;
+        }
+        .moviePlace{
+            display: flex;
+            flex-direction: column;
+        }
+        .movie{
+            margin: 50px 35px;
+            position: relative;
+        }
+        .movieContainer{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: #e2e2e2;
+        }
+        img{
+            width: 400px;
+            height: 610px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+        img:hover + .movieInfo{
+            opacity: 1;
+            transform: translateY(-200px);
+            z-index: 1;
+        }
+        .movieInfo{
+            position: absolute;
+            top: 200px;
+            width: 400px;
+            height: 610px;
+            border-radius: 20px;
+            padding: 50px 25px;
+            background-color: rgba(0,0,0,0.6);
+            color: white;
+            line-height: 30px;
+            opacity: 0;
+            transition: all 0.8s ease-in-out;
+            z-index: -1;
+        }
+        h2{
+            text-align: center;
+            margin-top: 70px;
+            margin-bottom: 70px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+        <header id="topPlace">
+            <div id="topContainer">
+
+                <div id="logo">
+                    <h1><a href="#" style="font-size:1.9rem"><span style="font-size:2.9rem; color:red">N</span>ameMohazi</a></h1>
+                </div>
+
+                <nav class="navi">
+                    <ul>
+                        <li><a href="main1.html#itrdUsing">이용 안내</a></li>
+                        <li><a href="main1.html#itrdMovie">영화 소개</a></li>
+                        <li><a href="main1.html#itrdBooking">예약 방법 및 요금</a></li>
+                        <li><a href="main4.html">예약하기</a></li>
+                    </ul>
+                </nav>
+
+                <div id="login">
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/5087/5087592.png" alt="이건 이미지"></a>
+                </div>
+
+            </div>
+        </header>
+
+        <div class="moviePlace">
+            <h2>판타지 영화 목록</h2>
+            <div class="movieContainer">
+                <div class="movie">
+                    <img src="https://i.namu.wiki/i/O1bQV2Rh7rVKZ8DNvbYydmc4NlRX1SvGu-dU_z6ws5NrGJEGLkNQWbXOtCZIEom3ysNpEYDWLc_gZnlgqIjblA.webp" alt="이미지">
+                    <div class="movieInfo">
+                        <h3>던전 앤 드래곤: 도적들의 명예</h3>
+                        <p>TRPG룰을 기반으로 만든 영화로 세계관과 룰을 아는 사람은 오타쿠처럼 즐길 수 있고 모르는 사람은 가벼운 킬링타임 판타지영화로서 즐길 수 있다고 생각하는 영화.</p>
+                        <p>앗 이거 이번 주말에 오랜만에 봐야지 유튜브에서 영화 할인해서 사서 소장중이기 때문입니다</p>
+                    </div>
+                </div>
+                <div class="movie">
+                    <img src="https://i.namu.wiki/i/DBJQqkz6M8W-g_d9SYq6kA5U8LWupLloptGWYrJg2WjNpQ0-IHmjs3Nvqf7mRriWqpgkUJAFgNSbio-IQWnT4A.webp" alt="이미지">
+                    <div class="movieInfo">
+                        <h3>해리포터와 마법사의 돌</h3>
+                        <p>웬만한 사람들이라면 한 번 쯤은 봤을 유명한 작품</p>
+                        <p>그리고 저는 놀랍게도 이 영화 시리즈를 2년 전에 처옴 봤습니다</p>
+                    </div>
+                </div>
+                <div class="movie">
+                    <img src="https://i.namu.wiki/i/ZyIQbqxFnXsIPXKphR6VHPEuOEBYzJfXyRUiCWj5Tl19PKE9ipGJjmwdKeGgIsojCC3TnmsPMa4-8wgY319vww.webp" alt="이미지">
+                    <div class="movieInfo">
+                        <h3>반지의 제왕: 왕의 귀환</h3>
+                        <p>하하 사실 본 적이 없어서 잘 모르는 영화입니다.</p>
+                        <p>언젠간 꼭 보고싶다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>
